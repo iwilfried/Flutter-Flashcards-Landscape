@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SlideZero extends StatelessWidget {
+  final String title;
   final Function startLesson;
-  const SlideZero(this.startLesson, {Key? key}) : super(key: key);
+  const SlideZero(this.startLesson, this.title, {Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -69,52 +70,20 @@ class SlideZero extends StatelessWidget {
                       ],
                     ),
               const Expanded(child: SizedBox()),
-              isPortrait
-                  ? Column(
-                      children: [
-                        AutoSizeText(
-                          'Information',
-                          maxLines: 1,
-                          style: GoogleFonts.oswald(
-                              textStyle: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 48,
-                          )),
-                        ),
-                        AutoSizeText(
-                          'Overload',
-                          maxLines: 1,
-                          style: GoogleFonts.oswald(
-                              textStyle: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 48,
-                          )),
-                        ),
-                      ],
-                    )
-                  : Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        AutoSizeText(
-                          'Information ',
-                          maxLines: 1,
-                          style: GoogleFonts.oswald(
-                              textStyle: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 48,
-                          )),
-                        ),
-                        AutoSizeText(
-                          'Overload',
-                          maxLines: 1,
-                          style: GoogleFonts.oswald(
-                              textStyle: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 48,
-                          )),
-                        ),
-                      ],
-                    ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  AutoSizeText(
+                    title,
+                    maxLines: 2,
+                    style: GoogleFonts.oswald(
+                        textStyle: TextStyle(
+                      color: Theme.of(context).primaryColor,
+                      fontSize: 48,
+                    )),
+                  )
+                ],
+              ),
               const Expanded(child: SizedBox()),
             ],
           ),
@@ -128,17 +97,17 @@ class SlideZero extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text('Start Lesson',
+              Text('Start',
                   style: GoogleFonts.robotoSlab(
-                      textStyle: const TextStyle(
-                    color: Color(0xff008080),
-                    fontWeight: FontWeight.w600,
-                    fontSize: 20,
+                      textStyle: TextStyle(
+                    color: Theme.of(context).primaryColor,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 18,
                   ))),
-              const Icon(
+              Icon(
                 Icons.keyboard_arrow_right_sharp,
                 size: 30,
-                color: Color(0xff008080),
+                color: Theme.of(context).primaryColor,
               ),
             ],
           ),

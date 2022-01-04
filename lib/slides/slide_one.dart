@@ -2,6 +2,7 @@ import 'package:flip_card/flip_card.dart';
 import 'package:flip_card/flip_card_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../state_managment/current_card_state_manager.dart';
 
@@ -54,16 +55,17 @@ class _SlideOneState extends ConsumerState<SlideOne> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Expanded(child: SizedBox()),
-                Container(
-                  decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      borderRadius: const BorderRadius.all(Radius.circular(5))),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  child: Text('$page/${widget.pages} Cards',
-                      style: const TextStyle(color: Colors.teal)),
-                ),
+                // const Expanded(child: SizedBox()),
+                // Container(
+                //   decoration: BoxDecoration(
+                //       color: Colors.grey[300],
+                //       borderRadius: const BorderRadius.all(Radius.circular(5))),
+                //   padding:
+                //       const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                //   child: Text('$page/${widget.pages} Cards',
+                //       style: const TextStyle(color: Colors.teal)),
+                // ),
+
                 const Expanded(child: SizedBox()),
                 Container(
                   width: width * .7,
@@ -80,34 +82,41 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                     },
                     front: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 15),
-                      decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(8.0)),
+                      decoration: const BoxDecoration(
+                        color: Colors.transparent,
+                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
                       ),
                       child: Center(
                           child: Text(widget.firstSide,
-                              style: const TextStyle(color: Colors.black))),
+                              style: GoogleFonts.robotoCondensed(
+                                  textStyle: TextStyle(
+                                color: Theme.of(context).primaryColor,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 36,
+                              )))),
                     ),
                     back: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 15),
-                      decoration: BoxDecoration(
-                        color: Colors.grey[300],
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(8.0)),
+                      decoration: const BoxDecoration(
+                        color: Colors.transparent,
+                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
                       ),
                       child: Center(
                           child: Text(widget.secondSide,
-                              style: const TextStyle(color: Colors.black))),
+                              style: GoogleFonts.robotoCondensed(
+                                  textStyle: TextStyle(
+                                color: Theme.of(context).primaryColor,
+                                fontSize: 19,
+                              )))),
                     ),
                   ),
                 ),
                 const Expanded(child: SizedBox()),
                 Container(
                   width: width * .3,
-                  decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      borderRadius: const BorderRadius.all(Radius.circular(5))),
+                  decoration: const BoxDecoration(
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.all(Radius.circular(5))),
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
                   child: Row(
@@ -118,9 +127,9 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                       IconButton(
                         padding: EdgeInsets.zero,
                         constraints: const BoxConstraints(),
-                        icon: const Icon(
+                        icon: Icon(
                           Icons.keyboard_arrow_left_sharp,
-                          color: Colors.teal,
+                          color: Theme.of(context).primaryColor,
                         ),
                         iconSize: 30,
                         onPressed: () {
@@ -130,9 +139,9 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                       IconButton(
                         padding: EdgeInsets.zero,
                         constraints: const BoxConstraints(),
-                        icon: const Icon(
+                        icon: Icon(
                           Icons.refresh,
-                          color: Colors.teal,
+                          color: Theme.of(context).primaryColor,
                         ),
                         iconSize: 25,
                         onPressed: () {
@@ -142,9 +151,9 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                       IconButton(
                         padding: EdgeInsets.zero,
                         constraints: const BoxConstraints(),
-                        icon: const Icon(
+                        icon: Icon(
                           Icons.keyboard_arrow_right_sharp,
-                          color: Colors.teal,
+                          color: Theme.of(context).primaryColor,
                         ),
                         iconSize: 30,
                         onPressed: () {

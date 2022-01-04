@@ -24,6 +24,8 @@ class _MainScreenState extends ConsumerState<MainScreen> {
         duration: const Duration(milliseconds: 3), curve: Curves.fastOutSlowIn);
   }
 
+  String title = "";
+  String lesson = "";
   int page = 0;
   List<Widget> list = [];
 
@@ -38,7 +40,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
     ]);
     loadData();
     list = [
-      SlideZero(startLesson),
+      SlideZero(startLesson, title),
     ];
   }
 
@@ -62,8 +64,13 @@ class _MainScreenState extends ConsumerState<MainScreen> {
     String data =
         await DefaultAssetBundle.of(context).loadString("assets/slides.json");
     final jsonResult = jsonDecode(data); //latest Dart
+    final slidesJson = jsonResult['slides'];
     setState(() {
-      jsonResult.forEach((slide) {
+      title = jsonResult['title'];
+      lesson = jsonResult['lesson'];
+      list = [];
+      list.add(SlideZero(startLesson, title));
+      slidesJson.forEach((slide) {
         list.add(SlideOne(
           firstSide: slide['First Side'],
           secondSide: slide['Second Side'],
@@ -101,7 +108,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
             ),
           ),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
+            padding: const EdgeInsets.only(left: 20, right: 12),
             color: Colors.blue,
             width: double.infinity,
             height: 40,
@@ -109,21 +116,25 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('1- OverLoad',
+                  Text(title,
                       style: GoogleFonts.robotoSlab(
-                          textStyle: const TextStyle(
-                              fontWeight: FontWeight.w400,
-                              color: Colors.white,
-                              fontSize: 11))),
+                        textStyle: GoogleFonts.robotoSlab(
+                            textStyle: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500)),
+                      )),
                   Text(
-                    'Introduction',
-                    style: GoogleFonts.robotoCondensed(
-                        textStyle:
-                            const TextStyle(color: Colors.white, fontSize: 13)),
+                    lesson,
+                    style: GoogleFonts.robotoSlab(
+                        textStyle: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500)),
                   ),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       IconButton(
                         padding: EdgeInsets.zero,
@@ -138,6 +149,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                         },
                       ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
                             '$page',
@@ -186,7 +198,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                         },
                       ),
                       PopupMenuButton<String>(
-                        icon: const Icon(
+                        child: const Icon(
                           Icons.more_vert,
                           color: Colors.white,
                         ),

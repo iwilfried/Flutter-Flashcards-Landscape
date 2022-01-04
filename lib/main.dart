@@ -22,8 +22,9 @@ class MyApp extends ConsumerWidget {
         title: 'Flutter Web for Slides',
         theme: ThemeData(
           brightness: Brightness.light,
-          primaryColor: Colors.black,
+          primaryColor: const Color(0xff333333),
           backgroundColor: Colors.white,
+
           /* light theme settings */
         ),
         darkTheme: ThemeData(
