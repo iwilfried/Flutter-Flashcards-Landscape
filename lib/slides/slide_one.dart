@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../state_managment/current_card_state_manager.dart';
+//import '../state_managment/current_card_state_manager.dart';
 
 class SlideOne extends ConsumerStatefulWidget {
   final String firstSide;
@@ -36,7 +36,7 @@ class _SlideOneState extends ConsumerState<SlideOne> {
 
   @override
   Widget build(BuildContext context) {
-    final int page = ref.watch(currentPageStateManagerProvider);
+    // final int page = ref.watch(currentPageStateManagerProvider);
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -88,6 +88,7 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                       ),
                       child: Center(
                           child: Text(widget.firstSide,
+                              textAlign: TextAlign.center,
                               style: GoogleFonts.robotoCondensed(
                                   textStyle: TextStyle(
                                 color: Theme.of(context).primaryColor,
@@ -103,8 +104,10 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                       ),
                       child: Center(
                           child: Text(widget.secondSide,
+                              textAlign: TextAlign.center,
                               style: GoogleFonts.robotoCondensed(
                                   textStyle: TextStyle(
+                                height: 1.7,
                                 color: Theme.of(context).primaryColor,
                                 fontSize: 19,
                               )))),
