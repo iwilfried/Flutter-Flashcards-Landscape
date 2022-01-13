@@ -2,18 +2,23 @@
 	"title" : "Google Analytics 4",
 	"lesson" : "Introduction",
 	"slides" : [
-	{
-		"First Side": "Was ist eine Google Analytics 4 Property?",
-		"Second Side": "Das neue Google Analytics 4 Property (ehemals App+Web Property) ist seit dem 14.10.2020 live. Daten Streams und die gesamte Property sind ab jetzt der Standard für jede neuangelegte Property in Google Analytics. Eins ist jedoch klar, Google Analytics 4 Property ist die Zukunft."
+		{
+		"First Side": "Was macht man mit Google Analytics?",
+		"Second Side": "Google Analytics ist ein Analyse-Tool, das Ihnen präzise Einblicke in die Performance Ihrer Webseite oder App erlaubt. Es lässt sich mit sämtlichen Google-Marketing-Produkten kombinieren, darunter Google Ads, Search Console oder Data Studio. "
 	},
 	{
-		"First Side": "Was ist eine Google Analytics 4 Property?",
-		"Second Side": "Das neue Google Analytics 4 Property (ehemals App+Web Property) ist seit dem 14.10.2020 live. Daten Streams und die gesamte Property sind ab jetzt der Standard für jede neuangelegte Property in Google Analytics. Eins ist jedoch klar, Google Analytics 4 Property ist die Zukunft."
+		"First Side": "Wie lange wird das Universal Analytics noch verfügbar sein?",
+		"Second Side": "Es ist nicht damit zu rechnen, dass Google das Universal Analytics (also das “bisherige” Analytics) in naher Zukunft abstellen wird. Aktuell ist es sowieso nicht empfehlenswert ausschliesslich auf das neue Analytics zu setzen, daher gibt es hier keinen Zeitdruck. Allerdings wird Google das Universal Analytics nicht mehr weiterentwickeln, sondern voll auf GA4 setzen."
 	},
 	{
-		"First Side": "Was ist eine Google Analytics 4 Property?",
-		"Second Side": "Das neue Google Analytics 4 Property (ehemals App+Web Property) ist seit dem 14.10.2020 live. Daten Streams und die gesamte Property sind ab jetzt der Standard für jede neuangelegte Property in Google Analytics. Eins ist jedoch klar, Google Analytics 4 Property ist die Zukunft."
+		"First Side": "Was ist eine Google Analytics KPI",
+		"Second Side": "Eine objektiv messbare Performance Kennzahl zur Überwachung, Analyse und Optimierung des Nutzerverhaltens auf Webseiten. Google Analytics Kennzahlen helfen Seitenbetreibern unter anderem bei der Operationalisierung der Marketingziele."
+	},
+	{
+		"First Side": "Von woher kann GA Online-Daten sammeln?",
+		"Second Side": "Mobile applications - Point of sale systems - video game consoles - CRM systems."
 	}
+
 
 ]
 }
